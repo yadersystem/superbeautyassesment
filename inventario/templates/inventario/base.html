@@ -9,6 +9,7 @@
     <title>Document</title>
 </head>
 <body>
+
     {% block logout %}
         <a href="{% url 'login'%}">Click para cerrar session</a>
     {% endblock %}
@@ -17,7 +18,6 @@
         <form method="post" >
         {%csrf_token%}
             Tipo:<input type="text" name="tipo" />
-            <!--input type="submit" value="Submit"-->
             Referencia: <input type="text" name="referencia" />
             <input type="submit" value="Submit">
         </form>
@@ -29,5 +29,6 @@
     {% block atras %}
         <h4><a href="{% url 'index' %}"><< Atras</a></h4>
     {% endblock %}
+
 </body>
 </html>
