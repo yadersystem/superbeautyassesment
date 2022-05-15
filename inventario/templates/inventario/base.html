@@ -9,6 +9,10 @@
     <title>Document</title>
 </head>
 <body>
+    {% block logout %}
+        <a href="{% url 'login'%}">Click para cerrar session</a>
+    {% endblock %}
+
     {% block search %}
         <form method="post" >
         {%csrf_token%}

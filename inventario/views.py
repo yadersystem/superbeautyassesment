@@ -1,15 +1,17 @@
-from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
+
 from inventario.models import Equipo, EquipoUsuario
 
 
-
+@login_required()
 def filtros(request):
     return render(request, 'inventario/elegir_filtros.html')
 
 
+@login_required()
 @csrf_exempt
 def equipo(request):
     """Nos permite ver el formualrio del filtro y renderizar esa informacion
@@ -24,6 +26,7 @@ def equipo(request):
     return render(request, 'inventario/equipo.html')
 
 
+@login_required()
 def equipo_details(request):
     """controlamos los posibles errores que se presenten a la hora de hacer los filtros con los
     valores optenidos y luego esa informacion es enviada a la plantilla """
@@ -42,6 +45,7 @@ def equipo_details(request):
     return render(request, 'inventario/details.html', {'equipos': equipo})
 
 
+@login_required()
 def equipousuario(request):
     """Nos permite ver el formulario del filtro y renderizar esa informacion
         a una vista que nos ayuda a procesarla"""
@@ -55,6 +59,7 @@ def equipousuario(request):
     return render(request, 'inventario/equipousuario.html')
 
 
+@login_required()
 def usuarios_details(request):
     """"
     controlamos los posibles errores que se presenten a la hora de hacer los filtros con los

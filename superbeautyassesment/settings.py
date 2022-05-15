@@ -55,7 +55,7 @@ ROOT_URLCONF = 'superbeautyassesment.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['./templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -123,3 +123,5 @@ STATIC_URL = '/static/'
 TEMPLATE_DIRS=[
     os.path.join(BASE_DIR, 'inventario/templates')
 ]
+
+LOGIN_REDIRECT_URL = '/'

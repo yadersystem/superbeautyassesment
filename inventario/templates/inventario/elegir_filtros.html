@@ -1,4 +1,9 @@
 {% include "./index.html" %}
+
+{% block logout %}
+    <a href="{% url 'login'%}">Click para cerrar session</a>
+{% endblock %}
+
 <h1>Elija un Filtro</h1>
 <div>
     <h3><a href="{% url 'equipo' %}">Filtrar por Equipo</a></h3>
