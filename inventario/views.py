@@ -1,12 +1,12 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
-
 from django.contrib.auth.models import User
 from inventario.models import Equipo, EquipoUsuario
 
 
-def index(request):
+
+def filtros(request):
     return render(request, 'inventario/elegir_filtros.html')
 
 
