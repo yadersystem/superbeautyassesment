@@ -1,0 +1,29 @@
+{% include './index.html' %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    {% block search %}
+        <form method="post" >
+        {%csrf_token%}
+            Tipo:<input type="text" name="tipo" />
+            <!--input type="submit" value="Submit"-->
+            Referencia: <input type="text" name="referencia" />
+            <input type="submit" value="Submit">
+        </form>
+    {% endblock %}
+
+    {% block details %}
+    {% endblock %}
+
+    {% block atras %}
+        <h4><a href="{% url 'index' %}"><< Atras</a></h4>
+    {% endblock %}
+</body>
+</html>

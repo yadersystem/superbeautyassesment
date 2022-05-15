@@ -1,0 +1,35 @@
+{% extends "./base.html" %}
+
+{% block search %}
+
+{% endblock %}
+
+{% block details %}
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col"># id</th>
+          <th scope="col">Equipo</th>
+          <th scope="col">Usuario</th>
+          <th scope="col">Fecha Asignacion</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for result in results %}
+        <tr>
+          <th scope="row">{{ result.id}}</th>
+          <td>{{ result.equipo }}</td>
+          <td>{{ result.usuario }}</td>
+          <td>{{ result.fechaasignacion }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    {% if msg %}
+        <h3>{{ msg }}</h3>
+    {% endif %}
+{% endblock %}
+
+{% block atras %}
+    <h4><a href="{% url "equipousuario" %}"><< Atras</a></h4>
+{% endblock %}
